@@ -3,10 +3,12 @@ require('scrabble')
 require('pry')
 
 describe('#scrabble') do
+  letterObj = Letter.new()
+  wordObj = Word.new()
   it("will return 1 based on one-point characters") do
-    expect(number_values("A")).to(eq(1))
+    expect(letterObj.number_values("A")).to(eq(1))
   end
   it("will return 8 based on characters") do
-    expect(scrabble("word")).to(eq(8))
+    expect(wordObj.scrabble("quiz")).to(eq(22))
   end
 end

@@ -1,4 +1,6 @@
 
+
+class Letter
   def number_values(letter)
     letter = letter.upcase
     one = ["A","E","I","O","U","L","N","R",'S','T']
@@ -50,12 +52,16 @@
       end
     end
   end
+end
 
+class Word < Letter
   def scrabble(word)
     points = 0
+    # obj = Letter.new()
     (0..word.length-1).each do |i|
       score = number_values(word[i])
       points += score
     end
     return points
   end
+end
